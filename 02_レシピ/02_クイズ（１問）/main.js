@@ -3,11 +3,13 @@ const quizImage = document.getElementById("quiz-image")
 const choice1 = document.getElementById("choice-1")
 const choice2 = document.getElementById("choice-2")
 const choice3 = document.getElementById("choice-3")
+const choice4 = document.getElementById("cboice-4")
 const feedback = document.getElementById("feedback")
 
 const quiz = {
   text: "ここの都道府県はどこでしょう？",
   image: "Beach.jpg",
+  //写真の追加の仕方が分からない
   choices: [
     {
       text: "福岡県",
@@ -22,6 +24,10 @@ const quiz = {
       text: "徳島県",
       feedback: "残念！徳島県は渦潮が有名だね！",
     },
+    {
+      text: "福井県",
+      feedback: "残念！でも福井県にも綺麗なビーチあるよね！",
+    },
   ],
 }
 
@@ -35,6 +41,7 @@ const reloadQuiz = function() {
   choice1.textContent = quiz.choices[0].text
   choice2.textContent = quiz.choices[1].text
   choice3.textContent = quiz.choices[2].text
+  choice4.textContent = quiz.choices[3].text
 }
 
 const choose = function(choiceNumber) {
@@ -49,6 +56,9 @@ choice2.onclick = function() {
 }
 choice3.onclick = function() {
   choose(2)
+}
+choice4.onclick = function() {
+  choose(3)
 }
 
 reloadQuiz()
