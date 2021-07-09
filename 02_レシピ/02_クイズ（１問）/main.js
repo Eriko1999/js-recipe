@@ -6,21 +6,21 @@ const choice3 = document.getElementById("choice-3")
 const feedback = document.getElementById("feedback")
 
 const quiz = {
-  text: "この星の名前は何でしょう？",
-  image: "Ganymede.jpg",
+  text: "ここの都道府県はどこでしょう？",
+  image: "Beach.jpg",
   choices: [
     {
-      text: "ゴリアテ",
+      text: "福岡県",
       feedback:
-        "残念！ゴリアテは、旧約聖書に登場するダビデに石で殺される巨人だよ。",
+        "正解！ここは福岡県の糸島っていう所にあって今人気の観光地です！",
     },
     {
-      text: "ゼニガメ",
-      feedback: "残念！ゼニガメは、クサガメまたはニホンイシガメの幼体だよ。",
+      text: "鳥取県",
+      feedback: "残念！鳥取じゃないんだな～！他の選択肢を選んでみてね",
     },
     {
-      text: "ガニメデ",
-      feedback: "正解！ガニメデは、木星の第三惑星だよ！",
+      text: "徳島県",
+      feedback: "残念！徳島県は渦潮が有名だね！",
     },
   ],
 }
@@ -28,7 +28,9 @@ const quiz = {
 const reloadQuiz = function() {
   quizText.textContent = "Q." + quiz.text
 
-  quizImage.scr = "./images/" + quiz.image
+  quizImage.scr =
+    "	https://cdn.zekkei-japan.jp/images/articles/1afa90fa6729e0210874a4e354922956.jpg" +
+    quiz.image
 
   choice1.textContent = quiz.choices[0].text
   choice2.textContent = quiz.choices[1].text
@@ -40,15 +42,12 @@ const choose = function(choiceNumber) {
 }
 
 choice1.onclick = function() {
-  // ゴリアテを選択
   choose(0)
 }
 choice2.onclick = function() {
-  // ゼニガメを選択
   choose(1)
 }
 choice3.onclick = function() {
-  // ガニメデを選択
   choose(2)
 }
 
