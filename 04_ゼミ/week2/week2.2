@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>メモアプリ</title>
+  </head>
+  <body>
+    <h2>メモアプリ</h2>
+    <input type="text" id="memo-input" />
+    <button id="add-button">押すのだ</button>
+    <div id="memo-container">
+      <!-- append で作った div タグを入れる場所 -->
+    </div>
+    <span></span>
+    <!-- <div = memo-container> -->
+    <script>
+      const memoInput = document.getElementById("memo-input");
+      const addButton = document.getElementById("add-button");
+      const memoContainer = document.getElementById("memo-container");
+
+      // 空の配列を作って欲しい！ごめん！
+      let memos = []
+       
+      addButton.onclick = function () {
+        // inputに入力した値を配列memosに追加して、
+        const text = memoInput.value;
+        memos.push(text)
+        // 追加できた事をコンソールで確認しましょう。 
+        console.log(memos)
+        // 1.  <div#memo-container> の内容を消す。
+        console.dir(memoContainer)
+        memoContainer.innerHTML = ""
+        // 2. for文を使って、
+        for (let index = 0; index < memos.length; index++) {
+          // memos の値を1つずつ <div#memo-container> に追加する。
+          // inputに入力した値→memosの値
+          const div = document.createElement("div");
+          div.textContent = memos[index];
+          memoContainer.append(div); 
+        }
+      };
