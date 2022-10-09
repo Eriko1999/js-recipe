@@ -26,7 +26,7 @@
         Answer.textContent = "ロシア";
       };
       const alertMessageTrue = function () {
-        Answer.textContent = "正解！";
+        Answer.textContent = "正解";
       };
       Ukraina.onclick = alertMessageUkraina;
       America.onclick = alertMessageAmerica;
