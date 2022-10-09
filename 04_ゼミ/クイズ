@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>WebExpertコーステンプレート</title>
+  </head>
+  <body>
+    <div>
+      <p>世界で一番大きな国は？</p>
+      <button id="Ukraina">ウクライナ</button>
+      <button id="buttonTrue">ロシア</button>
+      <button id="America">アメリカ</button>
+      <p id="answer">答えは</p>
+    </div>
+    <script>
+      const Ukraina = document.getElementById("Ukraina");
+      const America = document.getElementById("America");
+      const ButtonTrue = document.getElementById("buttonTrue");
+      const Answer = document.getElementById("answer");
+      const alertMessageUkraina = function () {
+        Answer.textContent = "ロシア";
+      };
+      const alertMessageAmerica = function () {
+        Answer.textContent = "ロシア";
+      };
+      const alertMessageTrue = function () {
+        Answer.textContent = "正解！";
+      };
+      Ukraina.onclick = alertMessageUkraina;
+      America.onclick = alertMessageAmerica;
+      ButtonTrue.onclick = alertMessageTrue;
+    </script>
+  </body>
+</html>
